@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 # Set work directory
 WORKDIR /app
@@ -9,17 +9,17 @@ RUN pip install poetry
 # Install dependencies
 RUN poetry config virtualenvs.create false
 
-# Copy pyproject.toml and poetry.lock
+# Copy pyproject.toml
 COPY pyproject.toml /app/
 
 # Generate lock file
 RUN poetry lock
 
-# Install dependencies
-RUN poetry install --no-dev
-
 # Copy application code
 COPY src /app/src
+
+# Install dependencies
+RUN poetry install --no-dev
 
 # Expose port
 EXPOSE 8000
