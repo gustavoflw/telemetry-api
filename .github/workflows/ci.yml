@@ -28,5 +28,5 @@ jobs:
           gcloud run deploy telemetry-api \
             --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/telemetry-api \
             --platform managed \
-            --region ${{ secrets.GCP_REGION }} \
+            --region us-central1 \
             --allow-unauthenticated
