@@ -7,10 +7,16 @@ WORKDIR /app
 RUN pip install poetry
 
 # Install dependencies
-RUN poetry config virtualenvs.create false && poetry lock && poetry install --no-dev
+RUN poetry config virtualenvs.create false
+
+# Generate lock file
+RUN poetry lock
 
 # Copy pyproject.toml and poetry.lock
 COPY pyproject.toml poetry.lock /app/
+
+# Install dependencies
+RUN poetry install --no-dev
 
 # Copy application code
 COPY src /app/src
