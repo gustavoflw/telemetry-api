@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telemetry Devices</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Telemetry Devices</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Data</th>
+        </tr>
+        {% for device in devices %}
+        <tr>
+            <td>{{ device.id }}</td>
+            <td>{{ device.name }}</td>
+            <td>{{ device.location }}</td>
+            <td>{{ device.data }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <script src="/static/main.js"></script>
+</body>
+</html>
