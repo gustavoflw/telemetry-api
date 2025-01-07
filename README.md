@@ -1,6 +1,6 @@
 # Telemetry API
 
-A basic CRUD API for telemetry devices using FastAPI, with a visualization screen for the data:
+A CRUD API for telemetry devices using FastAPI, with a visualization screen for the data:
 ![alt text](.github/visualization.png)
 
 ## Features
